@@ -1,6 +1,0 @@
-.slide-box{
-    width: 752px;
-    height: 251px;
-    overflow: hidden;
-    margin: 0 auto;
-}
