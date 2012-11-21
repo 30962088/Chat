@@ -7,6 +7,7 @@
 
     <head>
         <title>首页</title>
+        
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="<?php echo Yii::app() -> request -> baseUrl; ?>/css/reset.css"/>
         <link rel="stylesheet" href="<?php echo Yii::app() -> request -> baseUrl; ?>/css/global.css"/>
