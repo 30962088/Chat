@@ -1,0 +1,45 @@
+.global-bg{
+	background: url("images/bg.png") no-repeat center 0 transparent;
+}
+.icon-sprite{
+    background: url("images/icon.png") no-repeat;
+}
+.logo-sprite{
+    background: url("images/logo.png") no-repeat;
+}
+.logo-sprite.logo-logo1{
+    width: 200px;
+    height: 74px;
+
+}
+.icon-sprite.icon-user-small{
+    width: 30px;
+    height: 30px;
+    background-position: -132px 0;
+}
+.icon-sprite.icon-user-large{
+    width: 100px;
+    height: 100px;
+    background-position: -32px 0;
+}
+.icon-sprite.icon-camera{
+    width: 16px;
+    height: 19px;
+    background-position: -183px 0;
+}
+.icon-sprite.icon-redheart{
+    width: 19px;
+    height: 19px;
+    background-position: -162px -18px;
+}
+.icon-sprite.icon-RTA{
+    width: 64px;
+    height: 24px;
+    background-position: -39px -165px;
+}
+.icon-sprite.icon-ICRA{
+    width: 66px;
+    height: 24px;
+    background-position: -104px -165px;
+}
+

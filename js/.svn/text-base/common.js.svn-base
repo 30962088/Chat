@@ -1,0 +1,10 @@
+$(function(){
+    $("[effect-hover]").hover(function(){
+       $(this).addClass("hover"); 
+    },function(){
+        $(this).removeClass("hover");
+    });
+    $("[position-last]").each(function(){
+       $(this).children("*:last").addClass('last'); 
+    });
+});
