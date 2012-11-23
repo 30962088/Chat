@@ -174,4 +174,70 @@
     height: 15px;
     background-position: -376px -103px;
 }
+.icon-sprite.icon-star{
+    width: 23px;
+    height: 23px;
+    background-position:-457px -98px;    
+}
+.icon-sprite.icon-face1{
+    width: 24px;
+    height: 23px;
+    background-position: -312px -130px;
+}
+.icon-sprite.icon-face2{
+    width: 24px;
+    height: 24px;
+    background-position: -338px -129px;
+}
+.icon-sprite.icon-face3{
+    width: 24px;
+    height: 23px;
+    background-position: -365px -129px;
+}
+.icon-sprite.icon-face4{
+    width: 24px;
+    height: 23px;
+    background-position: -391px -128px;
+}
+.icon-sprite.icon-face5{
+    width: 24px;
+    height: 22px;
+    background-position: -417px -128px;
+}
+.icon-sprite.icon-face6{
+    width: 24px;
+    height: 23px;
+    background-position: -442px -126px;
+}
+.icon-sprite.icon-face7{
+    width: 24px;
+    height: 23px;
+    background-position: -469px -126px;
+}
+.icon-sprite.icon-face8{
+    width: 24px;
+    height: 23px;
+    background-position: -496px -126px;
+}
+.icon-sprite.icon-face9{
+    width: 24px;
+    height: 23px;
+    background-position: -523px -125px;
+}
+.icon-sprite.icon-face10{
+    width: 24px;
+    height: 23px;
+    background-position: -548px -125px;
+}
+.icon-sprite.icon-good{
+    width: 50px;
+    height: 52px;
+    background-position: -510px -1px;
+}
 
+.icon-sprite.icon-bad{
+    width: 50px;
+    height: 52px;
+    background-position: -564px -2px;
+    
+}

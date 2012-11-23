@@ -58,23 +58,21 @@
                             <div class="roomuser-list">
 
                                 <?php for($j=0;$j<3;$j++){  for($i = 1;$i<=10;$i++){
+if($i%4 == 0){
+$username = "扯不断的红尘(29982093)";
+}else{
+$username = "扯不断的红尘(293)";
+}
                                 ?>
-                                <div class="useritem-wrap" data-id="5">
+                                <div class="useritem-wrap" data-id="5" data-info="{id:5,username:'<?php echo $username?>',sign:'快乐每一天',from:'中国',old:28,sex:'男',pic:'/images/user<?php echo $i; ?>.png'}">
                                     <div class="useritem-outer">
                                         <div class="useritem-left">
                                             <img src="/images/user<?php echo $i; ?>.png"/>
                                         </div>
                                         <div class="useritem-center">
-                                            <?php if($i%4 == 0){
-                                            ?>
                                             <p class="name blue bold">
-                                                扯不断的红尘(29982093)
+                                                <?php echo $username ?>
                                             </p>
-                                            <?php }else{ ?>
-                                            <p class="name">
-                                                扯不断的红尘(293)
-                                            </p>
-                                            <?php } ?>
                                         </div>
                                         <div class="useritem-right">
                                             <div class="useritem-right-outer">
@@ -103,7 +101,7 @@
                     <div class="chatflash-box">
                         <div class="chatflash-bd">
                             <div class="flash-wrap">
-                            <embed src="/images/7ff.swf" quality="high" width="984" height="90" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" wmode="opaque"/>    
+                                <embed src="/images/7ff.swf" quality="high" width="984" height="90" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" wmode="opaque"/>
                             </div>
                         </div>
                         <div class="chatflash-fd">
@@ -139,7 +137,8 @@
                         </div>
                         <div class="chatcon-bd">
                             <div class="chatcon-list">
-                                <?php for($i = 1;$i<=10;$i++){?>
+                                <?php for($i = 1;$i<=10;$i++){
+                                ?>
                                 <div class="chatcon-item">
                                     <div class="chatitem-box">
                                         <div class="chatitem-outer">
@@ -147,45 +146,49 @@
                                                 <h5 class="title">紫霞仙子(1001):</h5>
                                             </div>
                                             <div class="chatitem-bd">
-                                                <p>你好啊你好啊你好啊你好啊你好啊~</p>
+                                                <p>
+                                                    你好啊你好啊你好啊你好啊你好啊~
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <?php }?>
+                                <?php } ?>
                             </div>
                             <div class="chatcon-fd">
                                 <form id="chat-form">
-                                    <input type="text"/>
+                                    <div class="chatinput-wrap">
+                                        <div type="text" id="chat-input" contenteditable="true"></div>
+                                    </div>
+
                                     <div class="ctrl-wrap">
                                         <span class="icon-sprite icon-image"></span>
-                                        <span class="icon-sprite icon-face"></span>
+                                        <a href="javascript:void(0)" id="face-pop-btn"> <span class="icon-sprite icon-face"></span> </a>
                                         <button class="icon-sprite icon-enter"></button>
                                     </div>
                                 </form>
-                                
-                                
+
                             </div>
                         </div>
                         <script>
-                        $("#chat-form").bind("submit",function(){
-                               var val = $(this).find("input[type='text']").val();
-                               if(val.length>0){
-                                   CHAT.insert({
-                                       title:{
-                                           'class':'red bold',
-                                           'html':'标题'
-                                       },
-                                       content:[{
-                                           'class':'blue',
-                                           'html': val
-                                       }]
+                            $("#chat-form").bind("submit", function() {
+                                var val = MEditor.getContent();
+                                if (val.length > 0) {
+                                    CHAT.insert({
+                                        title : {
+                                            'class' : 'red bold',
+                                            'html' : '标题'
+                                        },
+                                        content : [{
+                                            'class' : 'blue',
+                                            'html' : val
+                                        }]
                                     });
-                               }
-                               
+                                }
+
                                 return false;
-                        });
-                            
+                            });
+
                         </script>
                     </div>
                 </div>
@@ -193,6 +196,133 @@
         </div>
     </div>
 </div>
+<div class="evalpop-box common-pop-box clearfix" id="evalpop-box" style="display: none;">
+    <div class="evalpop-item good" data-type="good">
+        <div class="icon-sprite icon-good"></div>
+        <p>
+            好评+1
+        </p>
+    </div>
+    <div class="evalpop-item bad" data-type="bad">
+        <div class="icon-sprite icon-bad"></div>
+        <p>
+            差评-1
+        </p>
+    </div>
+</div>
+<!--
+<script>
+$(function(){
+Evalpop.show(function(type){
+console.info(type);
+});
+});
+</script>
+-->
+
+<div class="cinfopop-box common-pop-box" id="cinfopop-box" style="display: none;">
+    <p>
+        提示信息
+    </p>
+    <button class="common-pop-btn">
+        确认
+    </button>
+</div>
+<!--
+<script>
+$(function(){
+CInfopop.show("hehe");
+});
+</script>
+-->
+
+<div class="croompsw-box common-pop-box" id="croompsw-box" style="display: none;">
+    <form class="validate-form" method="post" action="signup">
+    <fieldset class="fieldset-box">
+        <div class="field-row">
+            <div class="field-ui">
+                <span class="holder">房间密码</span>
+
+                <input type="text" name="nickname" data-rule='[{name:"required",message:"请填写密码"},{name:"password",message:"限制长度9-100个字符"}]' class="text">
+                
+            </div>
+        </div>
+        <div class="field-row">
+            <div class="field-ui">
+                <span class="holder">验证码</span>
+                <input type="password" name="password" data-rule='[{name:"required",message:"请填写验证码"},{name:"valinum",message:"限制长度1~10个字符"}]' class="text" maxlength="100">
+            </div>
+        </div>
+        <div class="field-row" align="center">
+            <img src="/images/valinum.jpg"/>
+        </div>
+        
+    </fieldset>
+    <button class="common-pop-btn">
+        确认
+    </button>
+    </form>
+</div>
+
+<div class="facepop-box common-pop-box" id="facepop-box" style="display: none;">
+    <ul class="clearfix">
+        <?php for($i = 1;$i<=10;$i++) {?>
+        <li>
+            <div class="face-wrap">
+                <a href="javascript:void(0)" class="operation"> <img alt="@" class="icon-sprite icon-face<?php echo $i ?>" style="width: 24px;height:24px;"/> </a>
+            </div>
+        </li>
+        <?php } ?>
+        <?php for($i = 1;$i<=5;$i++) {?>
+        <li>
+            <div class="face-wrap">
+                <a href="javascript:void(0)" class="operation"> <img  alt="@" src="/images/<?php echo $i ?>.jpg"/> </a>
+            </div>
+        </li>
+        <?php } ?>
+    </ul>
+</div>
+<script id="tmpl-uchatpop-box" type="text/x-jquery-tmpl">
+    <div class="uchatpop-box common-pop-box" data-id="${id}">
+    <div class="uchatpop-left">
+    <div class="user-pic">
+    {{if pic}}
+    <img src="${pic}"/>
+    {{else}}
+    <div class="icon-sprite icon-user-large"></div>
+    {{/if}}
+
+    </div>
+    <div class="user-level">
+    <span class="icon-sprite icon-star inblock"></span>
+    </div>
+    </div>
+    <div class="uchatpop-right">
+    <h5 class="username">${username}</h5>
+    <div class="operation">
+    <a href="javascript:void(0)" data-type="info">禁言</a>
+    <a href="javascript:void(0)" data-type="">提出</a>
+    <a href="javascript:void(0)" data-type="">拉黑</a>
+    </div>
+    <p class="sign">${sign}</p>
+    <p class="from">
+    <label>来自</label>
+    <font>${from}</font>
+    </p>
+    <p class="old">
+    <label>年龄</label>
+    <font>${old}</font>
+    </p>
+    <p class="sex">
+    <label>性别</label>
+    <font>${sex}</font>
+    </p>
+    <div class="operation">
+    <a href="javascript:void(0)" data-type="reply">回复</a>
+    </div>
+    </div>
+    </div>
+</script>
 <script>
     $(".roomuser-list").userlist({
         iconChange : function(type, id, active) {
@@ -201,6 +331,6 @@
         itemChange : function(id) {
             console.info(id);
         }
-    }); 
-    $(".chatflash-ctrl").chatCtrl();
+    });
+    $(".chatflash-ctrl").chatCtrl(); 
 </script>

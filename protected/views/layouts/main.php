@@ -20,6 +20,7 @@
         <script src="<?php echo Yii::app()->request->baseUrl;?>/js/html5.js"></script>
         <![endif]-->
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery-1.8.2.min.js"></script>
+        <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.tmpl.min.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery-ui-1.9.1.custom.min.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.validate.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.nivo.slider.pack.js"></script>
@@ -27,6 +28,7 @@
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.cascade-select.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/common.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/i18n.js"></script>
+        
     </head>
     <body>
         <header id="header">

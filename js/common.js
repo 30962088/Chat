@@ -36,10 +36,139 @@ function ON_CHAT_RESIZE(){
         }
         dom.appendTo($(".chatcon-list"));
         CHAT.toBottom();
+        MEditor.clearContent();
     }
+    
+    CHAT.appendInput = function(html){
+        
+    }
+    
+    CHAT.focus = function(text){
+        $("#chat-input").val(text).focusEnd();;
+    } 
+    
     window.CHAT = CHAT;
 })();
 
+var MUtils = {
+    
+    CenterInWindow:function($box){
+        var windowWidth = document.documentElement.clientWidth;
+        var windowHeight = document.documentElement.clientHeight;
+        var popupHeight = $box.outerHeight();
+        var popupWidth = $box.outerWidth();
+        //centering
+        $box.css({
+            "position": "fixed",
+            "top": windowHeight/2-popupHeight/2,
+            "left": windowWidth/2-popupWidth/2
+        });
+        return $box;
+    }
+    
+}
+$(function(){
+    var Evalpop = function(){
+        var $box = $("#evalpop-box").appendTo("body");
+        
+        var onlick = function(type){}
+        
+        $box.find(".evalpop-item").bind("click",function(){
+            var type = $(this).data("type");
+            onlick(type);
+            $box.hide();
+        });
+        
+        return {
+            show:function(_onclick){
+                onlick = _onclick;
+                MUtils.CenterInWindow($box).show();
+            }
+        }
+    }
+    window.Evalpop = Evalpop();
+});
+
+$(function(){
+    var CroompswPop = function(){
+        var $box = $("#croompsw-box").appendTo("body");
+        
+        var onlick = function(type){}
+        
+        
+        $box.find(".evalpop-item").bind("click",function(){
+            var type = $(this).data("type");
+            onlick(type);
+            $box.hide();
+        });
+        
+        return {
+            show:function(_onclick){
+                onlick = _onclick;
+                MUtils.CenterInWindow($box).show();
+            }
+        }
+    }
+    window.Evalpop = Evalpop();
+});
+
+$(function(){
+    var CInfopop = function(){
+        var $box = $("#cinfopop-box").appendTo("body");
+        
+        $box.find("button").bind("click",function(){
+            $box.hide();
+        });
+        
+        return {
+            show:function(info){
+                MUtils.CenterInWindow($box).show().find("p").html(info);
+            }
+        }
+    }
+    window.CInfopop = CInfopop();
+});
+
+$(function(){
+    var MEditor = function(id){
+        
+        var $editor = $("#"+id);
+        
+        var lastSelectedRange;
+        
+        var content = "";
+        
+        $editor.bind("mouseup keyup blur",function(){
+            if(window.getSelection){
+                lastSelectedRange = getSelection().getRangeAt(0).cloneRange();
+            }
+        });
+        
+        return {
+           insert:function(html){
+               
+               var content = this.getContent();
+               var leftContent = content.substring(0,startOffset+1);
+               console.info(content);
+               var rightContent = content.substring(endOffset+1,content.length);
+               $editor.html(leftContent+html+rightContent);
+               
+               
+           },
+           append:function(html){
+               $editor.html(this.getContent()+html);
+           },
+           getContent:function(){
+               return $editor.html();
+           },
+           clearContent:function(){
+               $editor.html("");
+           }
+        }
+    }
+    
+    window.MEditor = MEditor("chat-input");
+});
 
 (function($) {
     $.extend($.fn, {
@@ -125,12 +254,53 @@ function ON_CHAT_RESIZE(){
 })(jQuery);
 
 (function($) {
+    $.userlist = {};
+    $.userlist.popbox = {};
+    $.userlist.popbox.init = function(){
+        $(document).delegate(".uchatpop-box,.roomuser-list","click",function(e){
+            e.stopPropagation();
+        });
+        $(document).bind("click",function(){
+            if($.userlist.lastBox){
+                $.userlist.lastBox.remove();
+            }
+        });
+        $(document).delegate(".uchatpop-box .operation a","click",function(){
+           var type = $(this).data("type");
+           var $box = $(this).closest(".uchatpop-box");
+           var info = $box.data("info");
+           if("reply" == type){
+               var username = info.username;
+               CHAT.focus("回复 "+username);
+               $box.remove();
+           } 
+        });
+    }
+    $.userlist.popbox.init();
+    $.userlist.popbox.show = function($box){
+        var lastBox = $.userlist.lastBox;
+        if(lastBox){
+            lastBox.remove();
+        }
+
+        var offset = $box.offset();
+        offset.left += $box.outerWidth();
+        var info = eval("("+$box.data("info")+")");
+        lastBox = $.tmpl($("#tmpl-uchatpop-box").template(), info).data("info",info).css({
+            left:offset.left+"px",
+            top:offset.top+"px"
+        }).appendTo("body");
+        $.userlist.lastBox = lastBox;
+    }
+    
     $.extend($.fn, {
+        
         userlist: function(options) {
             options = $.extend({
                 iconChange:function(type,id,active){},
                 itemChange:function(id){}
             },options);
+            
             return this.each(function(){
                 $(this).children().each(function(){
                     var $right = $(".useritem-right",this);
@@ -147,6 +317,7 @@ function ON_CHAT_RESIZE(){
                         $lastActive.removeClass("active");
                     }
                     $(this).addClass("active");
+                    $.userlist.popbox.show($(this));
                     options.itemChange($(this).data("id"));
                     $lastActive = $(this);
                 });
@@ -168,6 +339,35 @@ function ON_CHAT_RESIZE(){
     });
 })(jQuery);
 
+//facepop widget
+$(function(){
+    $.facepop = {};
+   
+    $.facepop._box = $("#facepop-box").appendTo("body");
+    
+    $.facepop.init = function(){
+        $("#face-pop-btn").bind("click",function(e){
+            var offset = $(this).offset();
+            offset.left -= $.facepop._box.outerWidth()-$(this).width()+5;
+            offset.top -= $.facepop._box.outerHeight();
+            $.facepop._box.css({
+                left:offset.left+"px",
+                top:offset.top+"px"
+            }).toggle();
+            e.stopPropagation();
+        });
+        $(document).bind("click",function(){
+            $.facepop._box.hide();
+        });
+        
+        $.facepop._box.delegate("a.operation","click",function(){
+           var html = $(this).html();
+           MEditor.append(html); 
+        });
+    }
+    
+    $.facepop.init();
+}); 
 
 
 (function($) {

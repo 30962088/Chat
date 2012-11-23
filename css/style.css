@@ -597,11 +597,135 @@ html.ie_lt9 .chatcon-box .chatcon-bd{
     color: #2C2C2C;
     position: relative;
 }
-.chatcon-fd input{
-    width: 97%;
-    padding:13px 5px;
+.chatcon-fd .chatinput-wrap{
+    margin-right: 95px;
+    height: 43px;
+    overflow: auto;
+    padding: 2px 0;
+}
+#chat-input{
+    word-break: break-word;
+    word-wrap: break-word;
+    outline: none;
+    cursor: text;
+    width: 100%;
+    padding:3px 0;
     border: 0;
     background: transparent;
+    line-height: 16px;
+    height: 37px;
+    
+}
+#chat-input .icon-sprite{
+    display: inline-block;
+    *display:inline;
+    *zomm:1;
+}
+
+.common-pop-box{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 99998;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.uchatpop-box{
+    padding: 15px 15px;
+    
+}
+.uchatpop-box .uchatpop-left{
+    float: left;
+    display: inline;
+    width: 100px;
+}
+.uchatpop-box .uchatpop-right{
+    float: left;
+    display: inline;
+    margin-left: 15px;
+    line-height: 25px
+}
+.uchatpop-box .user-level{
+    text-align: center;
+    margin-top: 5px;
+}
+.uchatpop-box .username{
+    font-weight: bold;
+}
+.uchatpop-box label{
+    margin-right: 5px;
+}
+.uchatpop-box .user-pic{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.uchatpop-box .user-pic img{
+    max-height: 100px;
+    max-width: 100px;
+}
+.facepop-box{
+    width: 210px;
+    padding: 10px;
+}
+.facepop-box li{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    padding: 3px;
+}
+.facepop-box li img{
+    max-height: 24px;
+    display: block;
+}
+.cinfopop-box{
+    padding: 18px 25px;
+    width: 190px;
+    color: #eaeaea;
+}
+.cinfopop-box p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.common-pop-btn{
+    background: rgba(80,80,80,0.7);
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    color: #eaeaea;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.evalpop-box{
+    padding:25px 40px;
+    border-radius: 15px;
+}
+.evalpop-box .evalpop-item{
+    float: left;
+    display: inline;
+    cursor: pointer;
+}
+.evalpop-box .evalpop-item.good{
+    color: #22ac38;
+}
+.evalpop-box .evalpop-item.bad{
+    color:#ff0000;
+    margin-left: 70px;
+    
+}
+.croompsw-box{
+    padding: 18px 25px;
+    width: 205px;
+}
+.croompsw-box .field-row{
+    margin: 0;
+    margin-bottom: 10px;
 }
 .ui-resizable { position: relative;}
 .ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }
