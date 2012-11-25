@@ -130,6 +130,7 @@
     height: 13px;
     background-position:-349px -41px;
 }
+<<<<<<< HEAD
 .icon-sprite.icon-mmic{
     width: 26px;
     height: 31px;
@@ -182,11 +183,26 @@
     background-position: -617px -79px;
 }
 
+=======
+.icon-sprite.icon-vol{
+    width: 28px;
+    height: 30px;
+    background-position:-147px -80px;
+}
+>>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .icon-sprite.icon-camera-b{
     width: 25px;
     height: 28px;
     background-position: -141px -113px;
 }
+<<<<<<< HEAD
+=======
+.icon-sprite.icon-mic-b{
+    width: 14px;
+    height: 29px;
+    background-position: -178px -114px;
+}
+>>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .icon-sprite.icon-close-b{
     width: 24px;
     height: 28px;
@@ -283,6 +299,7 @@
     background-position: -564px -2px;
     
 }
+<<<<<<< HEAD
 .icon-sprite.icon-close{
     width: 11px;
     height: 12px;
@@ -310,3 +327,5 @@
     height: 26px;
     background-position: -545px -60px;
 }
+=======
+>>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead

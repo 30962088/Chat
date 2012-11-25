@@ -605,6 +605,7 @@ Stack trace:
 #12 E:\job\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #13 E:\job\CI\index.php(11): CWebApplication->run()
 REQUEST_URI=/
+<<<<<<< HEAD
 2012/11/24 08:29:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in E:\job\framework\web\CController.php:484
 Stack trace:
 #0 E:\job\framework\web\CController.php(271): CController->missingAction('js')
@@ -749,3 +750,5 @@ Stack trace:
 #12 E:\job\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #13 E:\job\CI\index.php(11): CWebApplication->run()
 REQUEST_URI=http://www.baidu.com/
+=======
+>>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead

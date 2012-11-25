@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Allow from all
 AddType audio/mpeg mp3
 AddType audio/mp4 m4a
@@ -11,3 +12,6 @@ AddType video/mp4 m4v
 AddType video/ogg ogv
 AddType video/webm webm
 AddType video/webm webmv
+=======
+Allow from all
+>>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
