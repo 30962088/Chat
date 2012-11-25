@@ -464,16 +464,11 @@ html.ie_lt9 .roomuser-box .roomuser-bd{
 
 .chatflash-box .chatflash-fd{
     height: 45px;
-<<<<<<< HEAD
-=======
-    text-align: center;
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
 }
-<<<<<<< HEAD
 .chatflash-box .chatflash-ctrl{
     position: absolute;
     left: 50%;
@@ -481,8 +476,6 @@ html.ie_lt9 .roomuser-box .roomuser-bd{
     margin-left: -117px;
     margin-top: -20px
 }
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .chatflash-box .chatflash-fd .inblock{
     text-align: left;
 }
@@ -496,7 +489,6 @@ html.ie_lt9 .roomuser-box .roomuser-bd{
     opacity: 0.7;
     filter:alpha(opacity=70);
 }
-<<<<<<< HEAD
 .chatflash-box .chatflash-ctrl .ui-slider{
     display: inline-block;
     *display:inline;
@@ -504,13 +496,10 @@ html.ie_lt9 .roomuser-box .roomuser-bd{
     position: relative;
     left: -10px;
 }
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .chatflash-box .chatflash-ctrl .icon-sprite.active{
     opacity:1;
     filter:alpha(opacity=100);
 }
-<<<<<<< HEAD
 .ui-slider{
     position: relative;
     width: 90px;
@@ -536,11 +525,6 @@ html.ie_lt9 .roomuser-box .roomuser-bd{
     margin-left: -11px;
 }
 
-=======
-.chatflash-box .chatflash-bd{
-    
-}
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .chatflash-box .flash-wrap{
     text-align: center;
     height: 480px;
@@ -701,14 +685,11 @@ html.ie_lt9 .chatcon-box .chatcon-bd{
 .uchatpop-box .user-level{
     text-align: center;
     margin-top: 5px;
-<<<<<<< HEAD
     
 }
 .uchatpop-box .icon-star{
     vertical-align: middle;
     margin-left: 5px;
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 }
 .uchatpop-box .username{
     font-weight: bold;
@@ -786,7 +767,6 @@ html.ie_lt9 .chatcon-box .chatcon-bd{
     margin: 0;
     margin-bottom: 10px;
 }
-<<<<<<< HEAD
 .croompsw-box .valinum{
     cursor: pointer;
 }
@@ -885,8 +865,6 @@ html.ie_lt9 .chatcon-box .chatcon-bd{
     margin-left: 35px;
     border-radius: 10px;
 }
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 .ui-resizable { position: relative;}
 .ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }
 .ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }

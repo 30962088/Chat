@@ -605,7 +605,6 @@ Stack trace:
 #12 E:\job\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #13 E:\job\CI\index.php(11): CWebApplication->run()
 REQUEST_URI=/
-<<<<<<< HEAD
 2012/11/24 08:29:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in E:\job\framework\web\CController.php:484
 Stack trace:
 #0 E:\job\framework\web\CController.php(271): CController->missingAction('js')
@@ -733,22 +732,3 @@ Stack trace:
 #12 E:\job\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #13 E:\job\CI\index.php(11): CWebApplication->run()
 REQUEST_URI=http://www.baidu.com/
-2012/11/25 14:24:39 [error] [php] include(Post.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\job\framework\YiiBase.php:423)
-Stack trace:
-#0 E:\job\CI\protected\controllers\PostController.php(120): spl_autoload_call()
-#1 E:\job\framework\web\actions\CInlineAction.php(50): PostController->actionIndex()
-#2 E:\job\framework\web\CController.php(309): CInlineAction->runWithParams()
-#3 E:\job\framework\web\filters\CFilterChain.php(134): PostController->runAction()
-#4 E:\job\framework\web\filters\CFilter.php(41): CFilterChain->run()
-#5 E:\job\framework\web\CController.php(1146): CAccessControlFilter->filter()
-#6 E:\job\framework\web\filters\CInlineFilter.php(59): PostController->filterAccessControl()
-#7 E:\job\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
-#8 E:\job\framework\web\CController.php(292): CFilterChain->run()
-#9 E:\job\framework\web\CController.php(266): PostController->runActionWithFilters()
-#10 E:\job\framework\web\CWebApplication.php(283): PostController->run()
-#11 E:\job\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#12 E:\job\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#13 E:\job\CI\index.php(11): CWebApplication->run()
-REQUEST_URI=http://www.baidu.com/
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead

@@ -101,7 +101,6 @@ $username = "扯不断的红尘(293)";
                     <div class="chatflash-box">
                         <div class="chatflash-bd">
                             <div class="flash-wrap">
-<<<<<<< HEAD
                                 <div class="inblock">
                                     <embed src="http://player.youku.com/player.php/sid/XNDc5MjI2ODA4/v.swf" allowFullScreen="true" quality="high" width="800" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"  wmode="transparent"></embed>    
                                 </div>
@@ -150,20 +149,6 @@ $username = "扯不断的红尘(293)";
                                     });
                                 });
                             </script>
-=======
-                                <embed src="/images/7ff.swf" quality="high" width="984" height="90" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" wmode="opaque"/>
-                            </div>
-                        </div>
-                        <div class="chatflash-fd">
-                            <div class="inblock">
-                                <div class="chatflash-ctrl">
-                                    <span class="icon-sprite icon-vol" data-type="vol" data-value="0"></span>
-                                    <span class="icon-sprite icon-camera-b" data-type="camera"></span>
-                                    <span class="icon-sprite icon-mic-b" data-type="mic" data-value=""></span>
-                                    <span class="icon-sprite icon-close-b" data-type="close"></span>
-                                </div>
-                            </div>
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                         </div>
                     </div>
                 </div>
@@ -209,11 +194,7 @@ $username = "扯不断的红尘(293)";
                             <div class="chatcon-fd">
                                 <form id="chat-form">
                                     <div class="chatinput-wrap">
-<<<<<<< HEAD
                                         <div type="text" id="chat-input" accesskey="q" contenteditable="true"></div>
-=======
-                                        <div type="text" id="chat-input" contenteditable="true"></div>
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                                     </div>
 
                                     <div class="ctrl-wrap">
@@ -292,7 +273,6 @@ CInfopop.show("hehe");
 -->
 
 <div class="croompsw-box common-pop-box" id="croompsw-box" style="display: none;">
-<<<<<<< HEAD
     <form  method="post" onsubmit="return false;">
         <fieldset class="fieldset-box">
             <div class="field-row">
@@ -326,34 +306,6 @@ CroompswPop.show();
 })
 </script>
 -->
-=======
-    <form class="validate-form" method="post" action="signup">
-    <fieldset class="fieldset-box">
-        <div class="field-row">
-            <div class="field-ui">
-                <span class="holder">房间密码</span>
-
-                <input type="text" name="nickname" data-rule='[{name:"required",message:"请填写密码"},{name:"password",message:"限制长度9-100个字符"}]' class="text">
-                
-            </div>
-        </div>
-        <div class="field-row">
-            <div class="field-ui">
-                <span class="holder">验证码</span>
-                <input type="password" name="password" data-rule='[{name:"required",message:"请填写验证码"},{name:"valinum",message:"限制长度1~10个字符"}]' class="text" maxlength="100">
-            </div>
-        </div>
-        <div class="field-row" align="center">
-            <img src="/images/valinum.jpg"/>
-        </div>
-        
-    </fieldset>
-    <button class="common-pop-btn">
-        确认
-    </button>
-    </form>
-</div>
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 
 <div class="facepop-box common-pop-box" id="facepop-box" style="display: none;">
     <ul class="clearfix">
@@ -373,7 +325,6 @@ CroompswPop.show();
         <?php } ?>
     </ul>
 </div>
-<<<<<<< HEAD
 
 <div class="musicpop-box common-pop-box" id="musicpop-box" style="display: none;">
     <div id="playObj" style="display: none;"></div>
@@ -415,8 +366,6 @@ CroompswPop.show();
 </div>
 <script></script>
 
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 <script id="tmpl-uchatpop-box" type="text/x-jquery-tmpl">
     <div class="uchatpop-box common-pop-box" data-id="${id}">
     <div class="uchatpop-left">
@@ -428,18 +377,9 @@ CroompswPop.show();
     {{/if}}
 
     </div>
-<<<<<<< HEAD
     </div>
     <div class="uchatpop-right">
     <h5 class="username">${username}<span class="icon-sprite icon-star inblock"></span></h5>
-=======
-    <div class="user-level">
-    <span class="icon-sprite icon-star inblock"></span>
-    </div>
-    </div>
-    <div class="uchatpop-right">
-    <h5 class="username">${username}</h5>
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
     <div class="operation">
     <a href="javascript:void(0)" data-type="info">禁言</a>
     <a href="javascript:void(0)" data-type="">提出</a>
@@ -473,8 +413,4 @@ CroompswPop.show();
             console.info(id);
         }
     });
-<<<<<<< HEAD
-=======
-    $(".chatflash-ctrl").chatCtrl(); 
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
 </script>

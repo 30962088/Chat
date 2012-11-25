@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function DrawImage(ImgD,FitWidth,FitHeight){
    var image = ImgD;
    console.info(image.width+","+image.height+",",FitWidth+","+FitHeight);
@@ -71,48 +70,10 @@ function ON_CHAT_RESIZE() {
         for (var i = 0; i < contents.length; i++) {
             var content = contents[i];
             $bd.append($("<p class='" + content['class'] + "'>" + content.html + "</p>"));
-=======
-function ON_CHAT_RESIZE(){
-    var $center = $(".chat-center");
-    var $left = $(".room-left");
-    var $right = $(".room-right");
-    $(".chatcon-box").css({
-        right:0,
-        left:"auto"
-    });
-    $center.css({
-       "margin-left":$left.width()+"px",
-       "margin-right":$right.width()+"px"
-    });
-}
-
-(function(){
-    var CHAT = {};
-    //obj {"title":{'class':'cls sd as','html':'哈哈'},"content":[{'class'}]}
-    CHAT.toBottom = function(){
-        var list = $(".chatcon-list").get(0);
-        list.scrollTop=list.scrollHeight;
-    }
-    
-    CHAT.playMp3 = function(url){
-        $('<embed src="niftyplayer.swf?file=betty.mp3&as=0" name="niftyPlayer1" type="application/x-shockwave-flash" swLiveConnect="true" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>');
-    }
-    
-    CHAT.insert = function(obj){
-        var dom = $('<div class="chatcon-item"><div class="chatitem-box"><div class="chatitem-outer"><div class="chatitem-hd"><h5></h5></div><div class="chatitem-bd"></div></div></div></div>');
-        if(!$.isPlainObject(obj)) return;
-        dom.find('h5').addClass(obj.title.class).html(obj.title.html);
-        var $bd = dom.find(".chatitem-bd");
-        var contents = obj.content;
-        for(var i = 0;i<contents.length;i++){
-            var content = contents[i];
-            $bd.append($("<p class='"+content.class+"'>"+content.html+"</p>"));
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
         }
         dom.appendTo($(".chatcon-list"));
         CHAT.toBottom();
         MEditor.clearContent();
-<<<<<<< HEAD
 
     }
 
@@ -125,36 +86,18 @@ function ON_CHAT_RESIZE(){
         ;
     }
 
-=======
-    }
-    
-    CHAT.appendInput = function(html){
-        
-    }
-    
-    CHAT.focus = function(text){
-        $("#chat-input").val(text).focusEnd();;
-    } 
-    
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
     window.CHAT = CHAT;
 })();
 
 var MUtils = {
-<<<<<<< HEAD
 
     CenterInWindow : function($box) {
-=======
-    
-    CenterInWindow:function($box){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
         var windowWidth = document.documentElement.clientWidth;
         var windowHeight = document.documentElement.clientHeight;
         var popupHeight = $box.outerHeight();
         var popupWidth = $box.outerWidth();
         //centering
         $box.css({
-<<<<<<< HEAD
             "position" : "fixed",
             "top" : windowHeight / 2 - popupHeight / 2,
             "left" : windowWidth / 2 - popupWidth / 2
@@ -183,36 +126,13 @@ $(function() {
         }
 
         $box.find(".evalpop-item").bind("click", function() {
-=======
-            "position": "fixed",
-            "top": windowHeight/2-popupHeight/2,
-            "left": windowWidth/2-popupWidth/2
-        });
-        return $box;
-    }
-    
-}
-$(function(){
-    var Evalpop = function(){
-        var $box = $("#evalpop-box").appendTo("body");
-        
-        var onlick = function(type){}
-        
-        $box.find(".evalpop-item").bind("click",function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             var type = $(this).data("type");
             onlick(type);
             $box.hide();
         });
-<<<<<<< HEAD
 
         return {
             show : function(_onclick) {
-=======
-        
-        return {
-            show:function(_onclick){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                 onlick = _onclick;
                 MUtils.CenterInWindow($box).show();
             }
@@ -221,7 +141,6 @@ $(function(){
     window.Evalpop = Evalpop();
 });
 
-<<<<<<< HEAD
 $(function() {
     var flashCtrl = function(options) {
         
@@ -433,49 +352,12 @@ $(function() {
         return {
             show : function(info) {
                 MUtils.CenterInDom($box,$box.parent()).show().find("p").html(info);
-=======
-$(function(){
-    var CroompswPop = function(){
-        var $box = $("#croompsw-box").appendTo("body");
-        
-        var onlick = function(type){}
-        
-        
-        $box.find(".evalpop-item").bind("click",function(){
-            var type = $(this).data("type");
-            onlick(type);
-            $box.hide();
-        });
-        
-        return {
-            show:function(_onclick){
-                onlick = _onclick;
-                MUtils.CenterInWindow($box).show();
-            }
-        }
-    }
-    window.Evalpop = Evalpop();
-});
-
-$(function(){
-    var CInfopop = function(){
-        var $box = $("#cinfopop-box").appendTo("body");
-        
-        $box.find("button").bind("click",function(){
-            $box.hide();
-        });
-        
-        return {
-            show:function(info){
-                MUtils.CenterInWindow($box).show().find("p").html(info);
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             }
         }
     }
     window.CInfopop = CInfopop();
 });
 
-<<<<<<< HEAD
 $(function() {
     var MEditor = function(id) {
 
@@ -517,52 +399,11 @@ $(function() {
         }
     }
 
-=======
-$(function(){
-    var MEditor = function(id){
-        
-        var $editor = $("#"+id);
-        
-        var lastSelectedRange;
-        
-        var content = "";
-        
-        $editor.bind("mouseup keyup blur",function(){
-            if(window.getSelection){
-                lastSelectedRange = getSelection().getRangeAt(0).cloneRange();
-            }
-        });
-        
-        return {
-           insert:function(html){
-               
-               var content = this.getContent();
-               var leftContent = content.substring(0,startOffset+1);
-               console.info(content);
-               var rightContent = content.substring(endOffset+1,content.length);
-               $editor.html(leftContent+html+rightContent);
-               
-               
-           },
-           append:function(html){
-               $editor.html(this.getContent()+html);
-           },
-           getContent:function(){
-               return $editor.html();
-           },
-           clearContent:function(){
-               $editor.html("");
-           }
-        }
-    }
-    
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
     window.MEditor = MEditor("chat-input");
 });
 
 (function($) {
     $.extend($.fn, {
-<<<<<<< HEAD
         holderplace : function(options) {
             return this.each(function() {
                 function onkeyup(e) {
@@ -589,33 +430,6 @@ $(function(){
                     onkeyup.call(this);
                 });
 
-=======
-        holderplace: function(options) {
-            return this.each(function(){
-                function onkeyup(e){
-                    (function($this){
-                        setTimeout(function(){
-                           var length = $this.value.length;
-                            if(length <=0){
-                                $($this).siblings(".holder").show();
-                            }else{
-                                $($this).siblings(".holder").hide();
-                            } 
-                        },20);
-                        
-                    })(this);
-                }
-                
-                $(this).delegate(".field-ui","click",function(){
-                    $(this).find("input[type='text'],input[type='password']").focus();
-                });
-                $(this).delegate("input[type='text'],input[type='password']","keydown",onkeyup);
-                
-                $("input[type='text'],input[type='password']",this).each(function(){
-                    onkeyup.call(this);
-                });
-                
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             });
         }
     });
@@ -623,7 +437,6 @@ $(function(){
 
 (function($) {
     $.extend($.fn, {
-<<<<<<< HEAD
         widgetcheck : function(options) {
             return this.each(function() {
                 function init() {
@@ -653,35 +466,6 @@ $(function(){
                         ui.addClass("checked");
                     }
 
-=======
-        widgetcheck: function(options) {
-            return this.each(function(){
-                function init(){
-                    var ui = $(this).find('.field-check');
-                    var $checkbox = $(this).find("input[type='checkbox']");
-                    if($checkbox.attr("checked")){
-                        ui.addClass("checked");
-                        options.onchange && options.onchange.call(this,true);
-                    }else{
-                        ui.removeClass("checked");
-                        options.onchange && options.onchange.call(this,false);
-                    }
-                }
-                init.apply(this);
-                $(this).bind("click",function(){
-                      var ui = $(this).find('.field-check');
-                      var $checkbox = $(this).find("input[type='checkbox']");
-                      if ($checkbox.attr("checked")) {
-                          $checkbox.attr("checked",false);
-                          options.onchange && options.onchange.call(this,false);
-                          ui.removeClass("checked");
-                      } else {
-                          $checkbox.attr("checked",true);
-                          options.onchange && options.onchange.call(this,true);
-                          ui.addClass("checked");
-                      }
-                      
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                 });
             });
         }
@@ -690,7 +474,6 @@ $(function(){
 
 (function($) {
     $.extend($.fn, {
-<<<<<<< HEAD
         score : function(options) {
             options = $.extend({
                 score : 1,
@@ -700,17 +483,6 @@ $(function(){
                 var score = options.score && $(this).attr("data-score");
                 score = score > options.total ? options.total : score;
                 $(this).find(".score").width(score * 18);
-=======
-        score: function(options) {
-            options = $.extend({
-                score:1,
-                total:5
-            },options);
-            return this.each(function(){
-                var score = options.score && $(this).attr("data-score");
-                score = score>options.total?options.total:score;
-                $(this).find(".score").width(score*18);
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             });
         }
     });
@@ -719,7 +491,6 @@ $(function(){
 (function($) {
     $.userlist = {};
     $.userlist.popbox = {};
-<<<<<<< HEAD
     $.userlist.popbox.init = function() {
         $(document).delegate(".uchatpop-box,.roomuser-list", "click", function(e) {
             e.stopPropagation();
@@ -744,38 +515,11 @@ $(function(){
     $.userlist.popbox.show = function($box) {
         var lastBox = $.userlist.lastBox;
         if (lastBox) {
-=======
-    $.userlist.popbox.init = function(){
-        $(document).delegate(".uchatpop-box,.roomuser-list","click",function(e){
-            e.stopPropagation();
-        });
-        $(document).bind("click",function(){
-            if($.userlist.lastBox){
-                $.userlist.lastBox.remove();
-            }
-        });
-        $(document).delegate(".uchatpop-box .operation a","click",function(){
-           var type = $(this).data("type");
-           var $box = $(this).closest(".uchatpop-box");
-           var info = $box.data("info");
-           if("reply" == type){
-               var username = info.username;
-               CHAT.focus("回复 "+username);
-               $box.remove();
-           } 
-        });
-    }
-    $.userlist.popbox.init();
-    $.userlist.popbox.show = function($box){
-        var lastBox = $.userlist.lastBox;
-        if(lastBox){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             lastBox.remove();
         }
 
         var offset = $box.offset();
         offset.left += $box.outerWidth();
-<<<<<<< HEAD
         var info = eval("(" + $box.data("info") + ")");
         lastBox = $.tmpl($("#tmpl-uchatpop-box").template(), info).data("info", info).css({
             left : offset.left + "px",
@@ -807,37 +551,6 @@ $(function(){
 
                 $(this).delegate(".useritem-wrap", "click", function() {
                     if ($lastActive) {
-=======
-        var info = eval("("+$box.data("info")+")");
-        lastBox = $.tmpl($("#tmpl-uchatpop-box").template(), info).data("info",info).css({
-            left:offset.left+"px",
-            top:offset.top+"px"
-        }).appendTo("body");
-        $.userlist.lastBox = lastBox;
-    }
-    
-    $.extend($.fn, {
-        
-        userlist: function(options) {
-            options = $.extend({
-                iconChange:function(type,id,active){},
-                itemChange:function(id){}
-            },options);
-            
-            return this.each(function(){
-                $(this).children().each(function(){
-                    var $right = $(".useritem-right",this);
-                    var $center = $(".useritem-center",this);
-                    $center.css({
-                        "margin-right":($right.width()+1)+"px"
-                    })
-                });
-                
-                var $lastActive;
-                
-                $(this).delegate(".useritem-wrap","click",function(){
-                    if($lastActive){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                         $lastActive.removeClass("active");
                     }
                     $(this).addClass("active");
@@ -845,7 +558,6 @@ $(function(){
                     options.itemChange($(this).data("id"));
                     $lastActive = $(this);
                 });
-<<<<<<< HEAD
 
                 $(this).delegate(".useritem-right .icon-sprite", "click", function(e) {
                     var id = $(this).closest(".useritem-wrap").data("id");
@@ -856,18 +568,6 @@ $(function(){
                     } else {
                         $(this).addClass("active");
                         options.iconChange($(this).data("type"), id, true);
-=======
-                
-                $(this).delegate(".useritem-right .icon-sprite","click",function(e){
-                    var id = $(this).closest(".useritem-wrap").data("id");
-                    if($(this).hasClass("active")){
-                        $(this).removeClass("active");
-                        
-                        options.iconChange($(this).data("type"),id,false);
-                    }else{
-                        $(this).addClass("active");
-                        options.iconChange($(this).data("type"),id,true);
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                     }
                     e.stopPropagation();
                 });
@@ -877,7 +577,6 @@ $(function(){
 })(jQuery);
 
 //facepop widget
-<<<<<<< HEAD
 $(function() {
     $.facepop = {};
 
@@ -936,97 +635,11 @@ $(function() {
                     options.init($(that).find("font").data("type"));
                 })(this);
 
-=======
-$(function(){
-    $.facepop = {};
-   
-    $.facepop._box = $("#facepop-box").appendTo("body");
-    
-    $.facepop.init = function(){
-        $("#face-pop-btn").bind("click",function(e){
-            var offset = $(this).offset();
-            offset.left -= $.facepop._box.outerWidth()-$(this).width()+5;
-            offset.top -= $.facepop._box.outerHeight();
-            $.facepop._box.css({
-                left:offset.left+"px",
-                top:offset.top+"px"
-            }).toggle();
-            e.stopPropagation();
-        });
-        $(document).bind("click",function(){
-            $.facepop._box.hide();
-        });
-        
-        $.facepop._box.delegate("a.operation","click",function(){
-           var html = $(this).html();
-           MEditor.append(html); 
-        });
-    }
-    
-    $.facepop.init();
-}); 
-
-
-(function($) {
-    $.extend($.fn, {
-        chatgroup: function(options) {
-            options = $.extend({
-                change:function(type){},
-                init:function(type){}
-            },options);
-            return this.each(function(){
-                function change(i){
-                    $(this).children().each(function(j){
-                        var type = $(this).data("type");
-                        if(j == i){
-                            $(this).replaceWith($('<font>' + this.innerHTML + '</font>').data("type",type));
-                            options.change(type);
-                        }else{
-                            $(this).replaceWith($('<a href="#">' + this.innerHTML + '</a>').data("type",type));
-                        }
-                    });
-                }
-                
-                (function(that){
-                    $(that).delegate("a","click",function(){
-                       change.call(that,$(this).index()); 
-                    });
-                    options.init($(that).find("font").data("type"));
-                })(this);
-                
             });
         }
     });
 })(jQuery);
 
-(function($) {
-    $.extend($.fn, {
-        chatCtrl: function(options) {
-            options = $.extend({
-
-            },options);
-            function onclick(){
-                var type = $(this).data("type");
-                
-                    if($(this).hasClass("active")){
-                        $(this).removeClass("active");
-                    }else{
-                        $(this).addClass("active");
-                    }
-                
-                
-            }
-            return this.each(function(){
-                
-                $(this).delegate(".icon-sprite","click",onclick);
-                
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
-            });
-        }
-    });
-})(jQuery);
-
-<<<<<<< HEAD
 $(function() {
     ON_CHAT_RESIZE();
     $("[cascade-url]").each(function() {
@@ -1051,61 +664,25 @@ $(function() {
 
     (function() {
         $("#room-open-btn").bind("click", function() {
-=======
-$(function(){
-    ON_CHAT_RESIZE();
-    $("[cascade-url]").each(function(){
-       var url = $(this).attr("cascade-url");
-       $(this).cascade({
-            url:"/ajax/cascade.php"
-       });
-    });
-    
-    $(".score-box").score();
-    
-    $(".validate-form").validate();
-    
-    
-    
-    
-    $(".roomuser-box").resizable({ handles: "e",resize:ON_CHAT_RESIZE });
-    $(".chatcon-box").resizable({ handles: "w" ,resize:ON_CHAT_RESIZE});
-    
-    (function(){
-        $("#room-open-btn").bind("click",function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             $(".roomuser-box").show();
             $(this).hide();
             ON_CHAT_RESIZE();
         });
-<<<<<<< HEAD
         $("#room-hide-btn").bind("click", function() {
-=======
-        $("#room-hide-btn").bind("click",function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             $("#room-open-btn").show();
             $(".roomuser-box").hide();
             ON_CHAT_RESIZE();
         });
-<<<<<<< HEAD
         $("#chatcon-open-btn").bind("click", function() {
-=======
-        $("#chatcon-open-btn").bind("click",function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             $(".chatcon-box").show();
             $(this).hide();
             ON_CHAT_RESIZE();
         });
-<<<<<<< HEAD
         $("#chatcon-hide-btn").bind("click", function() {
-=======
-        $("#chatcon-hide-btn").bind("click",function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             $("#chatcon-open-btn").show();
             $(".chatcon-box").hide();
             ON_CHAT_RESIZE();
         });
-<<<<<<< HEAD
 
     })();
 
@@ -1157,58 +734,6 @@ $(function(){
             $(this).closest("form").submit();
         },
         onSelectClick : function() {
-=======
-        
-    })();
-    
-    
-    
-    $(".filed-check-wrap").widgetcheck({
-        onchange:function(checked){
-            if(checked){
-                $(this).removeClass("disable");
-                $("#signup-btn").removeClass("disable").attr("disabled",false);
-            }else{
-                $(this).addClass("disable");
-                $("#signup-btn").addClass("disable").attr("disabled",true);
-            }
-        }
-    });
-    
-    $(".valinum-wrap img").bind("click",function(){
-       var out1 = /(.*)/.exec($(this).attr('src'));
-       var out2 = /(.*)\?/.exec($(this).attr('src'));
-       var out = out2||out1;
-       if(out){
-           $(this).attr("src",out[1]+"?v="+new Date().getTime());
-       }
-    });
-    
-    $(".fieldset-box").holderplace();
-   // $(".field-check").widgetcheck();
-    $("[effect-hover]").hover(function(){
-       $(this).addClass("hover"); 
-    },function(){
-        $(this).removeClass("hover");
-    });
-    $("[position-last]").each(function(){
-       $(this).children("*:last").addClass('last'); 
-    });
-    $("#g-search-text").autocomplete("/ajax/search.php",{
-        width:function(){
-            return $("#header .search-ui").innerWidth();
-        },
-        offset:function(){
-            var $ui = $("#header .search-ui");
-            var _offset = $ui.offset();
-            var height = $ui.height();
-            
-            _offset.top = _offset.top + height;
-            return _offset;
-        },alwayInInput:true,onEnter:function(){
-            $(this).closest("form").submit();
-        },onSelectClick:function(){
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
             $(this).closest("form").submit();
         }
     });
@@ -1240,7 +765,6 @@ $(function(){
         afterLoad : function() {
         } // Triggers when slider has loaded
     });
-<<<<<<< HEAD
     (function() {
         var headerHeight = $("#header").outerHeight();
         var bodyHeight = $("#page-bd").outerHeight();
@@ -1268,31 +792,3 @@ $(function(){
         }
     });
 });
-=======
-    (function(){
-        var headerHeight = $("#header").outerHeight();
-        var bodyHeight = $("#page-bd").outerHeight();
-        var footerHeight = $("#footer").outerHeight()+$("#footer").outerHeight();
-        function footerAlwaysBottom(){
-            var screenHeight = $("html").height();
-            
-            if(footerHeight+bodyHeight+headerHeight<screenHeight){
-                $("#footer").addClass("fix-bellow");
-            }else{
-                $("#footer").removeClass("fix-bellow");
-            }
-        }
-        footerAlwaysBottom();
-        $(window).bind("resize",footerAlwaysBottom);
-    })();
-    $("#g-user-upload").bind("change",function(){
-       var value = this.value;
-       
-       if(!/(png|jpeg|jpg|gif)$/.test(value.toLowerCase())){
-           $("#g-upload-tip").html(I18N.imageTypeError)
-       }else{
-           $("#g-upload-tip").html("");
-       }
-    });
-});
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead

@@ -20,10 +20,7 @@
         <script src="<?php echo Yii::app()->request->baseUrl;?>/js/html5.js"></script>
         <![endif]-->
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery-1.8.2.min.js"></script>
-<<<<<<< HEAD
         <script src="/js/player/jquery.jplayer.min.js"></script>
-=======
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.tmpl.min.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery-ui-1.9.1.custom.min.js"></script>
         <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/jquery.validate.js"></script>
@@ -68,16 +65,8 @@
                                 <form action="#" method="get">
                                     <fieldset>
                                         <div class="search-ui">
-<<<<<<< HEAD
                                             <div class="search-ui-outer">     
                                                 <input type="text" id="g-search-text" name="s"/>
-=======
-                                            <div class="search-ui-outer">
-                                                
-                                                <input type="text" id="g-search-text" name="s"/>
-                                                <script src="<?php echo Yii::app() -> request -> baseUrl; ?>/js/data/city.js"></script>
-                                                <script></script>
->>>>>>> 46323a925819603fd2890a35b7ea72bb54003ead
                                             </div>
                                             <div class="search-btn">
                                                 <span class="icon-sprite icon-search-black" type="submit"></span>
